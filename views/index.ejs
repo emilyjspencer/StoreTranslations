@@ -9,9 +9,20 @@
   <body>
     <h1>Enter the English word or phrase and its German equivalent</h1>
     <form action="/words" method="POST">
-      <input type="text" placeholder="Enter an English word or phrase" name="english" />
-      <input type="text" placeholder="Enter the German equivalent" name="german" />
-      <button type="submit">Submit</button>
-    </form>
+        <input type="text" placeholder="Enter an English word or phrase" name="english" />
+        <input type="text" placeholder="Enter the German equivalent" name="german" />
+        <button type="submit">Submit</button>
+      </form>
+
+    <ul class="translations">
+
+        <% for(var i = 0; i < translations.length; i++) {%>
+            <li class="translation">
+                <span><%= translations[i].english %></span>:
+                <span><%= translations[i].german %></span>
+                </li>
+                <% } %>
+            </ul>
+    
   </body>
 </html>
